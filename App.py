@@ -30,72 +30,16 @@ def calculator():
     return jsonify({"the answer is ": sum})
 
 
-@App.route('/simple-interest')
-def simple_interest():
-    principal = 20000
-    rate = 7
-    time = 8
-    simple_interest = (principal * rate * time) / 100
-    si = (principal * rate * time) / 100
-    total_amount = principal + si
-
-    return jsonify({
-        "Principal": principal,
-        "Rate": f"{rate}%",
-        "Time (years)": time,
-        "Simple Interest": si,
-        "Total Amount": total_amount
-    })
 
 
-App.run(debug=True)  from flask import *
-
-
-App = Flask(__name__)
-
-
-#below we create the home route
-#routing is the process of mapping a URL to a function that will handle the request for that URL.
-@App.route('/api/home')
-def home():
-    return jsonify ({"Message" : "Home route Accessed"})
+App.run(debug=True) 
 
 
 
-@App.route('/api/products')
-def products():
-    return jsonify ({"Message" : "welcome to the products route"})
 
-#below is a route for addition
-@App.route("/api/calc", methods=["POST"])
-def calculator():
-    if request.method == "POST":
-      number1 = (request.form["number1"]) 
-      number2 = (request.form["number2"])
 
-      sum = int(number1) + int(number2)
-      
      
-  
-    return jsonify({"the answer is ": sum})
 
-
-@App.route('/simple-interest')
-def simple_interest():
-    principal = 20000
-    rate = 7
-    time = 8
-    simple_interest = (principal * rate * time) / 100
-    si = (principal * rate * time) / 100
-    total_amount = principal + si
-
-    return jsonify({
-        "Principal": principal,
-        "Rate": f"{rate}%",
-        "Time (years)": time,
-        "Simple Interest": si,
-        "Total Amount": total_amount
-    })
 
 
 App.run(debug=True)  
